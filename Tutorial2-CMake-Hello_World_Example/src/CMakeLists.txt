@@ -1,8 +1,3 @@
-cmake_minimum_required(VERSION 2.6)
-project(HelloWorld)
-
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/modules)
-
 set(SOURCE_FILES 
  "HelloWorld.cpp"
 )
@@ -15,3 +10,4 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} ${MAYA_LIBRARIES})
 
 MAYA_PLUGIN(${PROJECT_NAME})
+install(TARGETS ${PROJECT_NAME} ${MAYA_TARGET_TYPE} DESTINATION plug-ins)
